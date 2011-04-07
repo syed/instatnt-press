@@ -1,0 +1,83 @@
+{{
+	mod_utils = local_import("utils") 
+    		
+	if post.title!="":
+		response.title=post.title
+	pass	
+	
+	if post.text_slice!="":
+		response.description=mod_utils.clean_html(post.text_slice[:160])
+	pass
+	
+	post_keywords=""
+	if post.keywords:
+		for key in post.keywords:		
+			post_keywords += key + "," 
+		pass
+		response.keywords=post_keywords
+	pass
+}}
+
+{{extend 'layout.html'}}
+
+<!-- content -->
+<div id="content">	
+
+	<div class="post">
+		<h2 class="title">{{=post.title}}</h2>
+		<div class="meta">{{=XML(i2p.widgets.post_meta(post))}}</div><div style="clear: both;"></div>	
+		<div class="entry">
+			{{if i2p.config.editor_language in ['Markmin']:}}
+				{{=MARKMIN(post.description)}}
+			{{else:}}
+				{{=XML(post.description)}}
+			{{pass}}		
+		</div>
+		<div class="metabottom">			
+			{{=T('This article was updated on')}} {{=post.updated_on.strftime("%A, %B %d, %Y at %I:%M %p")}} 
+			{{=T('in categories')}} {{=XML(i2p.articles.get_post_category(post.id))}}.									
+		</div>
+		{{if post.keywords: }}
+			<div class="tags">
+				<strong>{{=T('Tags')}}:</strong>{{=XML(i2p.articles.keywords_to_tags_link(post.keywords))}}
+			</div>
+		{{pass}}
+	</div>
+	
+	<div id="comments">
+		{{if i2p.config.comments_method in ['Enabled']:}}
+			<div class="title-reply"></div>
+			<div class="form-reply"></div>
+			<div class="list-reply">{{=T("No comments loaded yet!. If persist enable javascript or update your browser.")}}</div>		
+		{{elif i2p.config.comments_method in ['Disqus']:}}
+			{{=XML(i2p.widgets.disqus_comments())}}
+		{{pass}}
+	</div>
+	
+	{{if i2p.config.comments_method in ['Enabled']:}}
+		<script type="text/javascript" charset="utf-8">jQuery(document).ready(function(){ LoadComments({{=post.id}},1); LoadCommentsTitle({{=post.id}}); LoadCommentsForm({{=post.id}}); });</script>
+	{{pass}}
+	
+	
+<div style="clear: both;"></div>
+</div>
+<!-- end #content -->	
+
+<!-- header -->
+{{block header}}						
+{{include i2p.siteinfo.get_layout_header()}}	
+{{end}}	
+<!-- end #header -->
+
+<!-- sidebars -->
+{{block sidebar}}
+{{include i2p.siteinfo.get_layout_sidebar()}}
+{{end}}	
+<!-- end sidebars -->
+
+<!-- footer -->
+{{block footer}}
+{{include i2p.siteinfo.get_layout_footer()}}	
+{{end}}
+<!-- end #footer -->
+

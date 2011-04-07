@@ -1,0 +1,98 @@
+{{#ATTENTION: If you want to customize, don't change things here
+  #			  make changes in view/layouts/xxx in other hand
+  #			  perhaps you are going to break update support.}}
+
+{{include 'layout_header.html'}}<!-- header html, dont remove -->	
+	
+<div id="container">
+	{{login_panel = get_login_panel()}}	
+	{{if login_panel!="":}}
+		{{=XML(login_panel)}}
+		{{pass}}						
+	
+	<!-- header -->
+	{{block header}}						
+	<div id="header">		
+		
+		<div id="logo">{{=i2p.siteinfo.print_logo()}}</div>
+		
+		<div id="menu">{{=XML(i2p.widgets.get_menu())}}</div>
+		
+		<div style="clear: both;"></div><!-- Clear the divs -->
+		
+	</div>
+	{{end}}	
+	<!-- end #header -->
+		
+	<div style="clear: both;"></div><!-- Clear the divs -->
+			
+	<div id="page">
+									
+		{{include}}						
+					
+		<!-- sidebar -->
+		{{block sidebar}}
+		<div id="sidebar">				
+			{{=XML(i2p.widgets.sidebar_search())}}
+			
+			{{=XML(i2p.widgets.sidebar_feed())}}	
+			
+			{{=XML(i2p.widgets.sidebar_last_posts())}}				
+			
+			{{=XML(i2p.widgets.sidebar_pages())}}
+			
+			{{=XML(i2p.widgets.sidebar_categories())}}	
+			
+			{{=XML(i2p.widgets.sidebar_archive())}}
+			
+			{{=XML(i2p.widgets.sidebar_tags())}}
+			
+			{{=XML(i2p.widgets.sidebar_links())}}
+			
+			{{=XML(i2p.widgets.sidebar_last_comments())}}					
+		</div>  <!-- end sidebar -->
+		
+		<!-- sidebar extra -->
+		<div id="sidebar-extra">
+			{{=XML(i2p.widgets.sidebar_aboutme())}}
+		</div> <!-- end sidebar extra -->		
+		{{end}}	
+		
+				
+	<!-- end #sidebars -->		
+		
+		<div style="clear: both;"></div><!-- this clear content and side bar -->
+				
+	</div><!-- end #page -->
+	
+</div><!-- end #container -->
+
+
+<!-- footer -->
+{{block footer}}
+<div id="footer">
+	
+	<div id="footer-widgets">
+		
+		{{=XML(i2p.widgets.footer_pages())}}
+		
+		{{=XML(i2p.widgets.footer_last_posts())}}				
+		
+		{{=XML(i2p.widgets.footer_archive())}}
+		
+		{{=XML(i2p.widgets.footer_categories())}}	
+				
+		<div style="clear: both; float: none;"></div>	
+		
+	</div>
+	
+	<div style="clear: both; float: none;"></div>
+	
+	{{=XML(i2p.siteinfo._get_footer())}} <!-- footer from i2p db footer here go what user change -->
+		
+</div>
+{{end}}
+<!-- end #footer -->
+
+<!-- footer html, dont remove -->
+{{include 'layout_footer.html'}}

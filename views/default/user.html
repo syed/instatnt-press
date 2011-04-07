@@ -1,0 +1,55 @@
+{{extend 'layout.html'}}
+
+<!-- content -->
+<div id="content">	
+
+	<div id="auth-user">
+		
+		<h2>{{=T( request.args(0).replace('_',' ').capitalize() )}}</h2>
+		{{=form}}
+		
+		{{if request.args(0)=='login':}}
+			{{if not 'register' in auth.settings.actions_disabled:}}
+				<br/><a href="{{=URL(r=request,args='register')}}">{{=T('Register')}}</a>
+				{{pass}}
+			{{if not 'request_reset_password' in auth.settings.actions_disabled:}}
+				<br/><a href="{{=URL(r=request,args='request_reset_password')}}">{{=T('Lost password')}}</a><br/>
+				{{pass}}
+			{{if request.env.web2py_runtime_gae:}}	
+				{{
+					from google.appengine.api import users
+		        	link_login_google = '<a href="%s">%s</a>' \
+		            % (users.create_login_url(request.env.path_info), T('Admin Panel'))
+					=XML(link_login_google)
+				}}			
+				{{pass}}
+		{{elif request.args(0)=='profile':}}
+			<br/><a href="{{=URL(request.application,i2p.config.controller_default,'change_avatar')}}">{{=T('Change Avatar')}}</a>
+		{{pass}}
+		
+	</div>
+	
+
+<div style="clear: both;"></div>
+</div>
+<!-- end #content -->	
+
+<!-- header -->
+{{block header}}						
+{{include i2p.siteinfo.get_layout_header()}}	
+{{end}}	
+<!-- end #header -->
+
+<!-- sidebars -->
+{{block sidebar}}
+{{include i2p.siteinfo.get_layout_sidebar()}}
+{{end}}	
+<!-- end sidebars -->
+
+<!-- footer -->
+{{block footer}}
+{{include i2p.siteinfo.get_layout_footer()}}	
+{{end}}
+<!-- end #footer -->
+
+

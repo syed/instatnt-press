@@ -1,0 +1,1331 @@
+<script type="text/javascript" charset="utf-8"><!--
+
+var url_admin_articles = "{{=URL(request.application,i2p.config.controller_admin,'articles/list')}}";
+var url_admin_user = "{{=URL(request.application,i2p.config.controller_admin,'user/list')}}";
+var url_admin_comment = "{{=URL(request.application,i2p.config.controller_admin,'comment/list')}}";
+var url_admin_info_list = "{{=URL(request.application,i2p.config.controller_admin,'info/list')}}";
+var url_admin_info_get_title = "{{=URL(request.application,i2p.config.controller_admin,'info/get_title')}}";
+var url_admin_info_get_subtitle = "{{=URL(request.application,i2p.config.controller_admin,'info/get_subtitle')}}";	
+var url_admin_info_get_description = "{{=URL(request.application,i2p.config.controller_admin,'info/get_description')}}";
+var url_admin_info_get_frontpage = "{{=URL(request.application,i2p.config.controller_admin,'info/get_frontpage')}}";
+var url_admin_info_get_about = "{{=URL(request.application,i2p.config.controller_admin,'info/get_about')}}";
+var url_admin_info_get_keywords = "{{=URL(request.application,i2p.config.controller_admin,'info/get_keywords')}}";
+var url_admin_info_get_copyright = "{{=URL(request.application,i2p.config.controller_admin,'info/get_copyright')}}";
+var url_admin_info_get_logo = "{{=URL(request.application,i2p.config.controller_admin,'info/get_logo')}}";		
+var url_admin_info_save_logo = "{{=URL(request.application,i2p.config.controller_admin,'info/save_logo')}}";
+var url_admin_info_save_title = "{{=URL(request.application,i2p.config.controller_admin,'info/save_title')}}";
+var url_admin_info_save_subtitle = "{{=URL(request.application,i2p.config.controller_admin,'info/save_subtitle')}}";	
+var url_admin_info_save_description = "{{=URL(request.application,i2p.config.controller_admin,'info/save_description')}}";
+var url_admin_info_save_frontpage = "{{=URL(request.application,i2p.config.controller_admin,'info/save_frontpage')}}";
+var url_admin_info_save_about = "{{=URL(request.application,i2p.config.controller_admin,'info/save_about')}}";
+var url_admin_info_save_keywords = "{{=URL(request.application,i2p.config.controller_admin,'info/save_keywords')}}";
+var url_admin_info_save_copyright = "{{=URL(request.application,i2p.config.controller_admin,'info/save_copyright')}}";
+var url_admin_articles_list = "{{=URL(request.application,i2p.config.controller_admin,'articles/list')}}";
+var url_admin_articles_add = "{{=URL(request.application,i2p.config.controller_admin,'articles/add')}}";
+var url_admin_articles_delete = "{{=URL(request.application,i2p.config.controller_admin,'articles/delete')}}";
+var url_admin_articles_get_title = "{{=URL(request.application,i2p.config.controller_admin,'articles/get_title')}}";
+var url_admin_articles_change_title = "{{=URL(request.application,i2p.config.controller_admin,'articles/change_title')}}";
+var url_admin_articles_get_content = "{{=URL(request.application,i2p.config.controller_admin,'articles/get_content')}}";
+var url_admin_articles_change_content = "{{=URL(request.application,i2p.config.controller_admin,'articles/change_content')}}";
+var url_admin_articles_get_extract = "{{=URL(request.application,i2p.config.controller_admin,'articles/get_extract')}}";
+var url_admin_articles_change_extract = "{{=URL(request.application,i2p.config.controller_admin,'articles/change_extract')}}";		
+var url_admin_articles_get_keywords = "{{=URL(request.application,i2p.config.controller_admin,'articles/get_keywords')}}";		
+var url_admin_articles_change_keywords = "{{=URL(request.application,i2p.config.controller_admin,'articles/change_keywords')}}";
+var url_admin_articles_get_name = "{{=URL(request.application,i2p.config.controller_admin,'articles/get_name')}}";		
+var url_admin_articles_change_name = "{{=URL(request.application,i2p.config.controller_admin,'articles/change_name')}}";
+var url_admin_articles_get_status = "{{=URL(request.application,i2p.config.controller_admin,'articles/get_status')}}";		
+var url_admin_articles_change_status = "{{=URL(request.application,i2p.config.controller_admin,'articles/change_status')}}";
+var url_admin_articles_get_ispage = "{{=URL(request.application,i2p.config.controller_admin,'articles/get_ispage')}}";		
+var url_admin_articles_change_ispage = "{{=URL(request.application,i2p.config.controller_admin,'articles/change_ispage')}}";
+var url_admin_articles_get_categories = "{{=URL(request.application,i2p.config.controller_admin,'articles/get_categories')}}";
+var url_admin_articles_change_categories = "{{=URL(request.application,i2p.config.controller_admin,'articles/change_categories')}}";
+var url_admin_articles_get_functions = "{{=URL(request.application,i2p.config.controller_admin,'articles/get_functions')}}";
+var url_admin_articles_get_url = "{{=URL(request.application,i2p.config.controller_admin,'articles/get_url')}}";		
+var url_admin_articles_change_url = "{{=URL(request.application,i2p.config.controller_admin,'articles/change_url')}}";
+var url_admin_user_list = "{{=URL(request.application,i2p.config.controller_admin,'user/list')}}";
+var url_admin_user_get_firstname = "{{=URL(request.application,i2p.config.controller_admin,'user/get_firstname')}}";
+var url_admin_user_get_lastname = "{{=URL(request.application,i2p.config.controller_admin,'user/get_lastname')}}";
+var url_admin_user_get_email = "{{=URL(request.application,i2p.config.controller_admin,'user/get_email')}}";
+var url_admin_user_save_email = "{{=URL(request.application,i2p.config.controller_admin,'user/save_email')}}";
+var url_admin_user_save_lastname = "{{=URL(request.application,i2p.config.controller_admin,'user/save_lastname')}}";
+var url_admin_user_save_firstname = "{{=URL(request.application,i2p.config.controller_admin,'user/save_firstname')}}";
+var url_admin_user_delete = "{{=URL(request.application,i2p.config.controller_admin,'user/delete')}}";
+var url_admin_user_activate = "{{=URL(request.application,i2p.config.controller_admin,'user/activate')}}";
+var url_admin_user_disable = "{{=URL(request.application,i2p.config.controller_admin,'user/disable')}}";
+var url_admin_user_block = "{{=URL(request.application,i2p.config.controller_admin,'user/block')}}";
+var url_admin_user_set_admin = "{{=URL(request.application,i2p.config.controller_admin,'user/set_admin')}}";
+var url_admin_user_change_pass = "{{=URL(request.application,i2p.config.controller_admin,'user/change_pass')}}";
+var url_admin_user_get_pass = "{{=URL(request.application,i2p.config.controller_admin,'user/get_pass')}}";
+var url_admin_comment_delete = "{{=URL(request.application,i2p.config.controller_admin,'comment/delete')}}";
+var url_admin_comment_get = "{{=URL(request.application,i2p.config.controller_admin,'comment/get')}}";
+var url_admin_comment_change = "{{=URL(request.application,i2p.config.controller_admin,'comment/change')}}";
+var url_admin_categories = "{{=URL(request.application,i2p.config.controller_admin,'cat/list')}}";
+var url_admin_categories_add = "{{=URL(request.application,i2p.config.controller_admin,'cat/add')}}";
+var url_admin_categories_delete = "{{=URL(request.application,i2p.config.controller_admin,'cat/delete')}}";
+var url_admin_categories_get_title = "{{=URL(request.application,i2p.config.controller_admin,'cat/get_title')}}";
+var url_admin_categories_change_title = "{{=URL(request.application,i2p.config.controller_admin,'cat/change_title')}}";
+var url_admin_categories_get_name = "{{=URL(request.application,i2p.config.controller_admin,'cat/get_name')}}";
+var url_admin_categories_change_name = "{{=URL(request.application,i2p.config.controller_admin,'cat/change_name')}}";
+var url_admin_categories_get_description = "{{=URL(request.application,i2p.config.controller_admin,'cat/get_description')}}";
+var url_admin_categories_change_description = "{{=URL(request.application,i2p.config.controller_admin,'cat/change_description')}}";
+var url_admin_image_list = "{{=URL(request.application,i2p.config.controller_admin,'image/list')}}";
+var url_admin_image_delete = "{{=URL(request.application,i2p.config.controller_admin,'image/delete')}}";
+var url_admin_image_form_upload = "{{=URL(request.application,i2p.config.controller_admin,'image/form_upload')}}";
+var url_admin_image_change_comment = "{{=URL(request.application,i2p.config.controller_admin,'image/change_comment')}}";
+var url_admin_image_get_comment = "{{=URL(request.application,i2p.config.controller_admin,'image/get_comment')}}";
+var url_admin_links_list = "{{=URL(request.application,i2p.config.controller_admin,'links/list')}}";
+var url_admin_links_add = "{{=URL(request.application,i2p.config.controller_admin,'links/add')}}";
+var url_admin_links_change_title = "{{=URL(request.application,i2p.config.controller_admin,'links/change_title')}}";
+var url_admin_links_get_title = "{{=URL(request.application,i2p.config.controller_admin,'links/get_title')}}";
+var url_admin_links_change_url = "{{=URL(request.application,i2p.config.controller_admin,'links/change_url')}}";
+var url_admin_links_get_url = "{{=URL(request.application,i2p.config.controller_admin,'links/get_url')}}";
+var url_admin_links_change_description = "{{=URL(request.application,i2p.config.controller_admin,'links/change_description')}}";
+var url_admin_links_get_description = "{{=URL(request.application,i2p.config.controller_admin,'links/get_description')}}";
+var url_admin_links_delete = "{{=URL(request.application,i2p.config.controller_admin,'links/delete')}}";
+var url_admin_style_list = "{{=URL(request.application,i2p.config.controller_admin,'style/list')}}";
+var url_admin_style_add = "{{=URL(request.application,i2p.config.controller_admin,'style/add')}}";
+var url_admin_style_change_title = "{{=URL(request.application,i2p.config.controller_admin,'style/change_title')}}";
+var url_admin_style_get_title = "{{=URL(request.application,i2p.config.controller_admin,'style/get_title')}}";
+var url_admin_style_change_css = "{{=URL(request.application,i2p.config.controller_admin,'style/change_css')}}";
+var url_admin_style_get_css = "{{=URL(request.application,i2p.config.controller_admin,'style/get_css')}}";
+var url_admin_style_change_author = "{{=URL(request.application,i2p.config.controller_admin,'style/change_author')}}";
+var url_admin_style_get_author = "{{=URL(request.application,i2p.config.controller_admin,'style/get_author')}}";
+var url_admin_style_delete = "{{=URL(request.application,i2p.config.controller_admin,'style/delete')}}";
+var url_admin_style_apply = "{{=URL(request.application,i2p.config.controller_admin,'style/apply')}}";
+var url_admin_style_avalaible = "{{=URL(request.application,i2p.config.controller_admin,'style/availables')}}";
+var url_admin_style_change_style = "{{=URL(request.application,i2p.config.controller_admin,'style/change_style')}}";
+	
+var url_get_comments_admin = "{{=URL(request.application,i2p.config.controller_default,'json_get_comments_from_post_admin')}}";
+var editor_js = "{{=i2p.config.editor}}"
+
+var LastZindex = 11; //this is to control the focus
+
+/* Classes */
+function AdminPanelList(url_function,name_panel) {
+		
+	this.url_function = url_function;	
+	this.name_panel = name_panel;
+	this.class_panel =  'panel-list';
+	this.name_content = this.name_panel + '-content';
+	this.name_close = this.name_panel + '-close';
+	this.parentobject = '.admin_nav';
+	this.page = 1;
+	this.search = "";
+	this.zindex = 11;
+	
+	/* Methods */
+	
+	this.Show = function() {							
+		PanelList = jQuery("#" + this.name_panel);		
+		var CurrentPanel = this;			
+		if (!Exists(PanelList)) {
+			var close_filename = url_images + '/close.png';		
+			jQuery('<div id="' +this.name_panel +'" class="ui-widget-content ' + this.class_panel + '"><img src="' + close_filename + '" class="close" alt="close" title="{{=T("Close this window")}}" id="' + this.name_close + '" /><div id="' + this.name_content + '"></div></div>').insertAfter(this.parentobject);
+			PanelList = jQuery("#" + this.name_panel);	
+			if (this.zindex != undefined) {	PanelList.css({'z-index': this.zindex});	}			
+			var PanelListClose = jQuery("#" + this.name_close);
+			PanelListClose.click(function(){CurrentPanel.Close();}).hover(function(){PanelListClose.css({cursor: 'pointer'});}, function(){	PanelListClose.css({cursor: 'default'});});	
+			PanelList.resizable(); //finally make resizebla
+			PanelList.draggable(); //finally make draggable
+			PanelList.click(function(){CurrentPanel.Focus();});	
+			
+			//Index
+			var NewZindex = LastZindex + 1;			
+			PanelList.css({'z-index': NewZindex});
+			LastZindex = NewZindex;									
+		}	
+								
+		if (PanelList.is(":hidden")) {PanelList.fadeIn("fast");	} else {this.Close();}		
+		this.RefreshList();		
+	}	
+		
+	this.Close = function() {
+		PanelList = jQuery("#" + this.name_panel);
+		if (Exists(PanelList)) {
+			PanelList.css({display: 'None' });
+			PanelList.remove();			
+		}
+	}
+	
+	this.RefreshList = function() 
+	{	
+		var CurrentPanel = this;								
+		this.ShowWait();												 
+		jQuery.getJSON(this.url_function, {page:this.page, search:this.search}, function(json){
+	    	html = json["html"];			
+			jQuery("#" + CurrentPanel.name_content).html(html);	
+			CurrentPanel.CloseWait();												
+	    });	
+	}	
+	
+	this.ShowWait = function() {					
+		WaitAjaxLoading(this.name_panel,'50%','50%');			
+	}
+	
+	this.CloseWait = function() {
+		CloseAjaxLoading(this.name_panel);		
+	}
+	
+	this.SetPage = function(page) {
+		if (typeof(page) === 'undefined') {	var page = 1;}
+		this.page = page;
+	}
+	
+	this.SetSearch = function(search) {
+		if (typeof(search) === 'undefined') {var search = "";}
+		this.search = search;
+	}
+	
+	this.Focus = function() {//Need to recode this :S
+		var zindex = LastZindex;
+		this.zindex = zindex + 1;
+		LastZindex = this.zindex;			
+		jQuery("#" + this.name_panel).css({'z-index': this.zindex});			
+	}		
+	
+	this.SetWidth = function(width) {
+		jQuery("#" + this.name_panel).css({'width': width});			
+	}
+	
+}
+
+/* Admin Panel Info */
+function AdminPanelInfo() {
+		
+	this.url_function = url_admin_info_list;	
+	this.name_panel = 'information';
+	this.class_panel =  'info-panel';
+	this.name_content = this.name_panel + '-content';
+	this.parentobject = '.admin_nav';	
+	this.zindex = 11;
+	
+	/* Methods */
+	
+	this.Show = function() {						
+		PanelInfo = jQuery("#" + this.name_panel);
+		var CurrentPanel = this;
+		var doload = false;		
+		if (!Exists(PanelInfo)) {
+			var close_filename = url_images + '/close.png';		
+			jQuery('<div id="'+ this.name_panel +'" class="ui-widget-content ' + this.class_panel + '"><img src="' + close_filename + '" class="close" alt="close" title="{{=T("Close this window")}}" /><div id="' + this.name_content + '"></div></div>').insertAfter(this.parentobject);
+			PanelInfo = jQuery("#" + this.name_panel);						
+			PanelInfoClose = jQuery("#" + this.name_panel + " .close");
+			PanelInfoClose.click(function(){CurrentPanel.Close();}).hover(function(){PanelInfoClose.css({cursor: 'pointer'});}, function(){PanelInfoClose.css({cursor: 'default'});	});
+			PanelInfo.draggable(); //finally make draggable
+			PanelInfo.click(function(){CurrentPanel.Focus();});
+			doload = true; //recently created so load	
+			
+			//Index
+			var NewZindex = LastZindex + 1;			
+			PanelInfo.css({'z-index': NewZindex});
+			LastZindex = NewZindex;						
+		}	
+								
+		if (PanelInfo.is(":hidden")) {PanelInfo.fadeIn("slow");} else {this.Close();}		
+		if (doload) {this.Init();}				
+	}	
+		
+	this.Close = function() {
+		PanelInfo = jQuery("#" + this.name_panel);
+		if (Exists(PanelInfo)) {PanelInfo.fadeOut("fast");}		
+	}
+		
+	this.Init = function() 
+	{
+		var CurrentPanel = this;
+		WaitAjaxLoading(this.name_panel,'50%','50%');		 
+		jQuery.getJSON(this.url_function, {}, function(json){				
+	    	html = json["html"];	
+			jQuery("#" + CurrentPanel.name_content).html(html);	
+			CloseAjaxLoading(CurrentPanel.name_panel);		
+	    });		
+	}	
+	
+	this.Focus = function() {//Need to recode this :S
+		var zindex = LastZindex;
+		this.zindex = zindex + 1;
+		LastZindex = this.zindex;			
+		jQuery("#" + this.name_panel).css({'z-index': this.zindex});			
+	}
+		
+}
+
+/* CLass Edit Box */
+function EditBox(name_panel,title,url_get,url_save,idrecord,advance,action) {
+			
+	if (typeof(idrecord) === 'undefined') {idrecord=0;}
+	if (idrecord != 0) { var new_name = name_panel +"-"+ idrecord; name_panel=new_name; }
+	if (typeof(advance) === 'undefined') { var advance = false; }	
+	if (typeof(action) === 'undefined') { var action = ""; }	
+	this.idrecord = idrecord;	
+	this.name_panel = name_panel;
+	this.title = title;
+	this.url_get = url_get;
+	this.url_save = url_save;	
+	this.action = action;
+	this.advance = advance;
+	this.class_panel =  'edit-content';	
+	this.name_close = this.name_panel + '-close';
+	this.name_save = this.name_panel + '-save';
+	this.name_textarea = this.name_panel + "-textarea";
+	//this.name_form = this.name_panel + "-form";
+	//this.name_submit = this.name_panel + "-submit";
+	this.name_title = this.name_panel + "-title";		
+	this.name_content = this.name_panel + '-content';
+	this.parentobject = '.admin_nav';	
+	this.zindex = 11;
+	
+	/* Methods */	
+	this.Show = function() {		
+		var CurrentPanel = this;
+		EditContent = jQuery("#" + this.name_panel);		
+		if (!Exists(EditContent)) {	
+			var close_filename = url_images + '/close.png';
+			var save_filename = url_images + '/editsave.png';			
+			jQuery('<div id="' + this.name_panel + '" class="ui-widget-content ' + this.class_panel + '"><img src="' + close_filename + '" class="close" alt="close" id="' + this.name_close + '" title="{{=T("Close this window")}}" /><img src="' + save_filename + '" class="save" alt="save" id="' + this.name_save + '" title="{{=T("Save the content")}}" /><div id="' +this.name_title + '"></div><textarea id="' + this.name_textarea +'" value="" rows="10" cols="50" /></div>').insertAfter(this.parentobject);
+			EditContent = jQuery("#" + this.name_panel);									
+			var EditContentClose = jQuery("#" + this.name_close);
+			EditContentClose.click(function(){CurrentPanel.Close();}).hover(function(){EditContentClose.css({cursor: 'pointer'	});	}, function(){EditContentClose.css({cursor: 'default'});});
+			
+			var EditContentSave = jQuery("#" + this.name_save);
+			EditContentSave.click(function(){CurrentPanel.OnSave();}).hover(function(){EditContentSave.css({cursor: 'pointer'	});	}, function(){EditContentSave.css({cursor: 'default'});});			
+									
+			if (advance) {
+				if (editor_js == "CKeditor") {
+					var config = {
+						forcePasteAsPlainText: true,
+						entities: false				
+					};
+					
+					var toolbar_small =
+						[						
+						    ['Source', '-', 'Bold', 'Italic', 'Underline' ],
+							['NumberedList','BulletedList','JustifyLeft','JustifyCenter','JustifyRight' ],
+							['Link','Unlink','Anchor'],
+    						['Image','Table','Smiley','SpecialChar','PageBreak'],
+							['Maximize', 'ShowBlocks','-','About']
+						];
+						
+					var toolbar_full =
+					[					    
+					    ['Source','-', 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Print', 'SpellChecker', 'Scayt'],
+					    ['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
+					    ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField'],
+					    '/',
+					    ['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
+					    ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote','CreateDiv'],
+					    ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+					    ['BidiLtr', 'BidiRtl' ],
+					    ['Link','Unlink','Anchor'],
+					    ['Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak'],
+					    '/',
+					    ['Styles','Format','Font','FontSize'],
+					    ['TextColor','BGColor'],
+					    ['Maximize', 'ShowBlocks','-','About']
+					];
+						
+					
+					config.toolbar = toolbar_full
+					
+					jQuery("#" + this.name_textarea).ckeditor(config);
+				}
+				else if (editor_js == "elRTE") {	
+					elRTE.prototype.options.panels.web2pyPanel = [
+					'bold', 'italic', 'underline', 'forecolor', 'justifyleft', 'justifyright',
+					'justifycenter', 'justifyfull', 'formatblock', 'insertorderedlist', 'insertunorderedlist',
+					'link', 'image', 'flash'
+					];
+					elRTE.prototype.options.toolbars.web2pyToolbar = ['web2pyPanel', 'tables'];				
+									
+					var config = {
+						//lang         : 'en',   // set your language						
+						toolbar      : 'web2pyToolbar'
+					};						
+					jQuery("#" + this.name_textarea).elrte(config);// create editor				
+				}
+			}
+			
+			if (!((advance) && (editor_js == "elRTE"))) {			
+				EditContent.resizable(); //finally make resize, but with editor elRTE we have problems
+			}
+			
+			EditContent.draggable(); //finally make draggable
+			EditContent.click(function(){CurrentPanel.Focus();});
+			
+			//Index
+			var NewZindex = LastZindex + 1;			
+			EditContent.css({'z-index': NewZindex});
+			LastZindex = NewZindex;										
+		}								
+		if (EditContent.is(":hidden")) {EditContent.fadeIn("fast");}				
+		this.ShowWait();				
+		jQuery('#' + this.name_title).html('<h2>' + this.title + '</h2>'); //set title			
+		this.OnGet();
+							
+	}			
+	this.Close = function() {
+		
+		EditContent = jQuery("#" + this.name_panel);
+		if (Exists(EditContent)) {
+			/* This is a bug i am hiding not removing: warning memory leak. */
+			/* I need to change this but i have a problem with ckeditor to implement remove */
+			if (this.advance) {
+				EditContent.fadeOut("fast");
+			} else {
+				EditContent.remove(); 
+			}	
+		}		
+	}		
+	this.OnSave = function() 
+	{		
+		var CurrentPanel = this;							
+		var content_value = jQuery("#" +  CurrentPanel.name_textarea).val();				
+		jQuery.post(CurrentPanel.url_save, {id: CurrentPanel.idrecord, value: content_value  }, function(data, textStatus) {
+		 	MessageLog(data);
+			CurrentPanel.Close();
+			CurrentPanel.OnNext();			
+		}, "json");			
+		
+	}	
+	this.OnGet = function() {			
+		var CurrentPanel = this;			 
+		jQuery.getJSON(this.url_get, {id: this.idrecord}, function(json){
+	    	value = json["value"];
+			message = json["message"];
+			alertwarn = json["alert"];
+			if (CurrentPanel.advance) {	jQuery("#" + CurrentPanel.name_textarea).val(value);}
+			else {jQuery("#" + CurrentPanel.name_textarea).text(value);}					
+			if (message != "") {ShowFlash(message,alertwarn);}			
+			CurrentPanel.CloseWait();			
+	    });	
+					
+	}	
+	this.ShowWait = function() {					
+		WaitAjaxLoading(this.name_panel,'50%','50%');			
+	}	
+	this.CloseWait = function() {
+		CloseAjaxLoading(this.name_panel);		
+	}		
+	this.OnNext = function() {		
+		if (this.action == "") {return;} 
+		else if (this.action == "show_articles") {ListArticles.RefreshList();}
+		else if (this.action == "show_users") {ListUsers.RefreshList();}
+		else if (this.action == "show_info") {}
+		else if (this.action == "show_categories") {ListCategories.RefreshList();}			
+		else if (this.action == "show_comments") {ListComments.RefreshList();}
+		else if (this.action == "show_links") {ListLinks.RefreshList();}
+		else if (this.action == "show_styles") {ListStyles.RefreshList();}					
+	}
+	
+	this.Focus = function() {//Need to recode this :S
+		var zindex = LastZindex;
+		this.zindex = zindex + 1;
+		LastZindex = this.zindex;			
+		jQuery("#" + this.name_panel).css({'z-index': this.zindex});			
+	}		
+}
+
+/* Change Category */
+function ChangeCategory(postid) {
+		
+	parentobject = '.admin_nav'; //parentobject = "#colcat-" + postid;	
+	this.name_panel = 'catchange' + postid; //This make unique
+	this.name_panel_select = this.name_panel + '-select';	
+	this.name_panel_close = this.name_panel + '-close';
+	this.name_save = this.name_panel + '-save';
+	this.class_panel =  'panel-change-cat';
+	this.url_get = url_admin_articles_get_categories;
+	this.url_save = url_admin_articles_change_categories;
+	this.postid = postid;
+	this.parentobject = parentobject;	
+	this.zindex = 11;
+	
+	/* Methods */
+	
+	this.Show = function() {				
+		
+		this.Close();//first close another panel	
+		var CurrentPanel = this;	
+		PanelChangeCat = jQuery("#" + this.name_panel);	
+		if (!Exists(PanelChangeCat)) {				
+			var close_filename = url_images + '/close.png';
+			var save_filename = url_images + '/editsave.png';
+			jQuery('<div id="' + this.name_panel + '" class="ui-widget-content ' + this.class_panel + '"><img src="' + close_filename + '" class="close" alt="close" title="{{=T("Close this window")}}" id="' + this.name_panel_close +'" /> <img src="' + save_filename + '" class="save" alt="save" id="' + this.name_save + '" title="{{=T("Save the content")}}" /> <div id="' + this.name_panel_select + '"></div></div>').insertAfter(this.parentobject);
+			PanelChangeCat = jQuery("#" + this.name_panel);	
+			PanelChangeCat.css({'margin-left': '420px', 'margin-top': '50px'});					
+			var PanelChangeCatClose = jQuery("#" + this.name_panel_close);
+			PanelChangeCatClose.click(function(){CurrentPanel.Close();}).hover(function(){PanelChangeCatClose.css({	cursor: 'pointer'});}, function(){PanelChangeCatClose.css({	cursor: 'default'});});
+			
+			var PanelChangeCatSave = jQuery("#" + this.name_save);
+			PanelChangeCatSave.click(function(){CurrentPanel.OnSave();}).hover(function(){PanelChangeCatSave.css({cursor: 'pointer'	});	}, function(){PanelChangeCatSave.css({cursor: 'default'});});
+			
+			this.OnGet();
+			PanelChangeCat.click(function(){CurrentPanel.Focus();});
+			
+			PanelChangeCat.resizable();
+			PanelChangeCat.draggable();
+			
+			//Index
+			var NewZindex = LastZindex + 1;			
+			PanelChangeCat.css({'z-index': NewZindex});
+			LastZindex = NewZindex;	
+														
+		}		
+		if (PanelChangeCat.is(":hidden")) {	PanelChangeCat.fadeIn("slow");} else { this.Close();} 		
+											
+	}	
+		
+	this.Close = function() {		
+		PanelChangeCat = jQuery("#" + this.name_panel);	
+		if (Exists(PanelChangeCat)) {
+			PanelChangeCat.css({display: 'None' });
+			PanelChangeCat.remove();		
+		}		
+	}
+		
+	this.OnGet = function() 
+	{			
+		var CurrentPanel = this;			
+		this.ShowWait();	 
+		jQuery.getJSON(this.url_get, {id: this.postid}, function(json){
+			message = json["message"];
+			value = json["value"];
+			jQuery("#" + CurrentPanel.name_panel_select).html(value);						
+			CurrentPanel.CloseWait();					
+	    });					
+	}	
+	
+	this.OnSave = function() {
+		
+		var CurrentPanel = this;			
+		var categories_chk = []; //get all categories checked in a list		
+		$('#'+ CurrentPanel.name_panel_select +' :checked').each(function() {categories_chk.push($(this).val());});			
+		categories_s = categories_chk.join(",") //transform to string
+		jQuery.getJSON(CurrentPanel.url_save, {id:CurrentPanel.postid, categories:categories_s}, function(json){
+			MessageLog(json);
+			CurrentPanel.Close();							
+	    });							
+	}
+	
+	this.ShowWait = function() {					
+		WaitAjaxLoading(this.name_panel,'50%','50%');			
+	}	
+	this.CloseWait = function() {
+		CloseAjaxLoading(this.name_panel);		
+	}
+	this.Focus = function() {//Need to recode this :S
+		var zindex = LastZindex;
+		this.zindex = zindex + 1;
+		LastZindex = this.zindex;			
+		jQuery("#" + this.name_panel).css({'z-index': this.zindex});			
+	}
+	
+	this.SetWidth = function(width) {
+		jQuery("#" + this.name_panel).css({'width': width});			
+	}
+	this.SetHeight = function(height) {
+		jQuery("#" + this.name_panel).css({'height': height});			
+	}		
+			
+}
+
+/* Change Style */
+function ChangeStyles(styleid) {
+		
+	var parentobject = '.admin_nav'; 	
+	this.name_panel = 'changestyle-' + styleid; //This make unique		
+	this.name_panel_close = this.name_panel + '-close';	
+	this.name_panel_content = this.name_panel + '-content';
+	this.class_panel =  'change-style';
+	this.url_get = url_admin_style_avalaible;
+	this.parentobject = parentobject;	
+	this.styleid = styleid;
+	this.zindex = 11;
+	
+	/* Methods */
+	
+	this.Show = function() {				
+		
+		this.Close();//first close another panel	
+		var CurrentPanel = this;	
+		PanelChangeStyle = jQuery("#" + this.name_panel);	
+		if (!Exists(PanelChangeStyle)) {				
+			var close_filename = url_images + '/close.png';			
+			jQuery('<div id="' + this.name_panel + '" class="ui-widget-content ' + this.class_panel + '"><img src="' + close_filename + '" class="close" alt="close" title="{{=T("Close this window")}}" id="' + this.name_panel_close +'" />  <div id="' + this.name_panel_content + '"></div></div>').insertAfter(this.parentobject);
+			PanelChangeStyle = jQuery("#" + this.name_panel);	
+			PanelChangeStyle.css({'margin-left': '300px', 'margin-top': '50px', 'min-width': '250px'});					
+			var PanelChangeStyleClose = jQuery("#" + this.name_panel_close);
+			PanelChangeStyleClose.click(function(){CurrentPanel.Close();}).hover(function(){PanelChangeStyleClose.css({	cursor: 'pointer'});}, function(){PanelChangeStyleClose.css({	cursor: 'default'});});
+					
+			this.OnGet();
+			PanelChangeStyle.click(function(){CurrentPanel.Focus();});
+			
+			PanelChangeStyle.resizable();
+			PanelChangeStyle.draggable();
+			
+			//Index
+			var NewZindex = LastZindex + 1;			
+			PanelChangeStyle.css({'z-index': NewZindex});
+			LastZindex = NewZindex;	
+														
+		}		
+		if (PanelChangeStyle.is(":hidden")) {	PanelChangeStyle.fadeIn("slow");} else { this.Close();} 		
+											
+	}	
+		
+	this.Close = function() {		
+		PanelChangeStyle = jQuery("#" + this.name_panel);	
+		if (Exists(PanelChangeStyle)) {
+			PanelChangeStyle.css({display: 'None' });
+			PanelChangeStyle.remove();		
+		}		
+	}
+		
+	this.OnGet = function() 
+	{			
+		var CurrentPanel = this;			
+		this.ShowWait();	 
+		jQuery.getJSON(this.url_get, {id: this.styleid}, function(json){
+			message = json["message"];
+			value = json["value"];
+			jQuery("#" + CurrentPanel.name_panel_content).html(value);						
+			CurrentPanel.CloseWait();					
+	    });					
+	}	
+			
+	this.ShowWait = function() {					
+		WaitAjaxLoading(this.name_panel,'50%','50%');			
+	}	
+	this.CloseWait = function() {
+		CloseAjaxLoading(this.name_panel);		
+	}
+	this.Focus = function() {//Need to recode this :S
+		var zindex = LastZindex;
+		this.zindex = zindex + 1;
+		LastZindex = this.zindex;			
+		jQuery("#" + this.name_panel).css({'z-index': this.zindex});			
+	}
+	
+	this.SetWidth = function(width) {
+		jQuery("#" + this.name_panel).css({'width': width});			
+	}
+	this.SetHeight = function(height) {
+		jQuery("#" + this.name_panel).css({'height': height});			
+	}		
+			
+}
+
+
+/* Upload image class */
+function FormUploadImage() {
+	
+	this.class_panel =  'upload-panel';
+	this.name_panel = 'upload-form';
+	this.name_panel_close = this.name_panel + '-close';
+	this.upload_content = 'upload-content';	
+	this.parentobject = '.admin_nav';
+	this.url_form_upload = url_admin_image_form_upload;	
+	this.zindex = 11;
+	
+	/* Methods */
+	
+	this.Show = function() {	
+			
+		var CurrentPanel = this;				
+		PanelUpload = jQuery("#" + this.name_panel);			
+		if (!Exists(PanelUpload)) {		
+			var close_filename = url_images + '/close.png';
+			jQuery('<div id="'+ this.name_panel +'" class="ui-widget-content ' + this.class_panel + '"><img src="' + close_filename + '" class="close" alt="close" id="' + this.name_panel_close + '" /><div class="' + this.upload_content +'"><h2>{{=T("Upload your image")}}</h2><iframe id="iframeupload" src="'+this.url_form_upload+'" style="width: 550px; height: 350px;"></iframe></div></div>').insertAfter(this.parentobject);
+			PanelUpload = jQuery("#" + this.name_panel);						
+			var PanelUploadClose = jQuery("#" + this.name_panel_close);
+			PanelUploadClose.click(function(){CurrentPanel.Close();}).hover(function(){PanelUploadClose.css({cursor: 'pointer'});}, function(){	PanelUploadClose.css({	cursor: 'default'});});
+			PanelUpload.resizable();
+			PanelUpload.draggable(); 
+			PanelUpload.click(function(){CurrentPanel.Focus();});
+			
+			//Index
+			var NewZindex = LastZindex + 1;			
+			PanelUpload.css({'z-index': NewZindex});
+			LastZindex = NewZindex;								
+		}	
+								
+		if (PanelUpload.is(":hidden")) {PanelUpload.fadeIn("fast");} else {this.Close();}						
+							
+	}	
+		
+	this.Close = function() {		
+		PanelUpload = jQuery("#" + this.name_panel);
+		if (Exists(PanelUpload)) {PanelUpload.fadeOut("fast");}		
+	}
+	
+	this.Focus = function() {//Need to recode this :S
+		var zindex = LastZindex;
+		this.zindex = zindex + 1;
+		LastZindex = this.zindex;			
+		jQuery("#" + this.name_panel).css({'z-index': this.zindex});			
+	}	
+				
+}
+
+/* Show url */
+function PanelShowUrlImage(id,url) {
+	
+	this.id = id;
+	this.url = url;	
+	this.parentobject = "#link-url-" + id;//jQuery("#link-url-" + id);
+	this.name_panel = 'show-url-' + id;
+	this.name_panel_close = this.name_panel + '-close';	
+	this.class_panel =  'show-url';	
+	this.zindex = 11;
+	
+	/* Methods */
+	
+	this.Show = function() {				
+		var CurrentPanel = this;
+		ShowUrl = jQuery("#" + this.name_panel);	
+		if (!Exists(ShowUrl)) {				
+			var close_filename = url_images + '/close.png';		
+			jQuery('<div id="' + this.name_panel + '" class="ui-widget-content '+ this.class_panel +'"><h2>{{=T("Url to an image")}}</h2><img src="' + close_filename + '" class="close" alt="close" id="'+ this.name_panel_close+'" /><textarea /></div>').insertAfter(this.parentobject);		
+			ShowUrl = jQuery("#" + this.name_panel);		
+			jQuery("#" + this.name_panel + ' textarea').val(this.url);
+			ShowUrl.css({'padding': '5px','background': '#fff','position': 'absolute'});									
+			var ShowUrlClose = jQuery("#" + this.name_panel_close);					
+			ShowUrlClose.click(function(){CurrentPanel.Close();}).hover(function(){	ShowUrlClose.css({cursor: 'pointer'	});	}, function(){	ShowUrlClose.css({cursor: 'default'	});	});
+			ShowUrl.draggable(); 			
+			ShowUrl.click(function(){CurrentPanel.Focus();});
+			
+			//Index
+			var NewZindex = LastZindex + 1;			
+			ShowUrl.css({'z-index': NewZindex});
+			LastZindex = NewZindex;												
+		}	
+		if (ShowUrl.is(":hidden")) {ShowUrl.fadeIn("fast");} 		
+												
+	}	
+		
+	this.Close = function() {		
+		ShowUrl = jQuery("#" + this.name_panel);
+		if (Exists(ShowUrl)) {
+			ShowUrl.css({display: 'None' });
+			ShowUrl.remove();		
+		}					
+	}	
+	
+	this.Focus = function() {//Need to recode this :S
+		var zindex = LastZindex;
+		this.zindex = zindex + 1;
+		LastZindex = this.zindex;			
+		jQuery("#" + this.name_panel).css({'z-index': this.zindex});			
+	}		
+}
+
+/* List Panels */
+var ListArticles = new AdminPanelList(url_admin_articles_list,'list-articles');
+var ListUsers = new AdminPanelList(url_admin_user_list,'list-users');
+var ListComments = new AdminPanelList(url_admin_comment,'list-comments');
+var ListImages = new AdminPanelList(url_admin_image_list,'list-images'); //zindex = 12
+var ListCategories = new AdminPanelList(url_admin_categories,'list-categories');
+var ListLinks = new AdminPanelList(url_admin_links_list,'list-links');
+var ListStyles = new AdminPanelList(url_admin_style_list,'list-styles');
+var Information = new AdminPanelInfo();
+	
+
+function ShowCloseAdmin(){	
+	var minsize = 30;
+	var maxsize = 330;		
+	AdminNav = jQuery(".admin_nav");		
+	if (AdminNav.width() <= minsize) {
+		AdminNav.animate({width: maxsize});	
+	} else {
+		AdminNav.animate({width: minsize});	
+	}			
+};
+	
+function InfoChangeTitle() {
+	var EditText = new EditBox('info_change_title','{{=T("Change title")}}', url_admin_info_get_title, url_admin_info_save_title, 0, false, 'show_info');
+	EditText.Show();	
+};	
+function InfoChangeSubTitle() {		
+	var EditText = new EditBox('info_change_subtitle','{{=T("Change subtitle")}}', url_admin_info_get_subtitle, url_admin_info_save_subtitle, 0, false, 'show_info');
+	EditText.Show();	
+};	
+function InfoChangeDescription() {
+	var EditText = new EditBox('info_change_description','{{=T("Change description")}}', url_admin_info_get_description, url_admin_info_save_description, 0, false, 'show_info');
+	EditText.Show();
+};
+function InfoChangeFrontPage() {
+	var EditText = new EditBox('info_change_frontpage','{{=T("Change front page")}}', url_admin_info_get_frontpage, url_admin_info_save_frontpage, 0, true, 'show_info');
+	EditText.Show();	
+};		
+function InfoChangeAbout() {
+	var EditText = new EditBox('info_change_about','{{=T("Change about")}}', url_admin_info_get_about, url_admin_info_save_about, 0, true, 'show_info');
+	EditText.Show();	
+};	
+function InfoChangeKeywords() {
+	var EditText = new EditBox('info_change_keywords','{{=T("Change keywords (sep. by ,)")}}', url_admin_info_get_keywords, url_admin_info_save_keywords, 0, false, 'show_info');
+	EditText.Show();	
+};
+function InfoChangeFooter() {
+	var EditText = new EditBox('info_change_copyright','{{=T("Change footer")}}', url_admin_info_get_copyright, url_admin_info_save_copyright, 0, true, 'show_info');
+	EditText.Show();	
+};
+function InfoChangeLogo() {	
+	var EditText = new EditBox('info_change_logo','{{=T("Change logo url")}}', url_admin_info_get_logo, url_admin_info_save_logo, 0, false, 'show_info');
+	EditText.Show();	
+};
+
+/* Articles */	
+function ArticleDelete(value) 
+{
+	if(!confirm("{{=T('Sure you want to delete this article?')}}")){ return}		
+	ListArticles.ShowWait();	 
+	jQuery.getJSON(url_admin_articles_delete, {id: value}, function(json){
+		MessageLog(json);	    		
+		ListArticles.CloseWait();
+		ListArticles.RefreshList();	
+    });
+};
+
+function ArticleAdd() 
+{		
+	ListArticles.ShowWait();	 
+	jQuery.getJSON(url_admin_articles_add, {}, function(json){
+		MessageLog(json);	    		
+		ListArticles.CloseWait();
+		ListArticles.RefreshList();		
+    });
+};
+
+function ArticleChangeTitle(id) 
+{
+	var EditText = new EditBox('article_change_title','{{=T("Change title")}}', url_admin_articles_get_title, url_admin_articles_change_title,id,false,'show_articles');
+	EditText.Show();	
+};
+
+function ArticleChangeContent(id) 
+{
+	var EditText = new EditBox('article_change_content','{{=T("Change content")}}', url_admin_articles_get_content, url_admin_articles_change_content,id,true,'show_articles');
+	EditText.Show();
+};
+
+function ArticleChangeExtract(id) 
+{
+	var EditText = new EditBox('article_change_extract','{{=T("Change extract")}}', url_admin_articles_get_extract, url_admin_articles_change_extract,id,true,'show_articles');
+	EditText.Show();	
+};
+
+function ArticleChangeKeywords(id) 
+{
+	var EditText = new EditBox('artcle_change_keywords','{{=T("Change keywords (sep. by ,)")}}', url_admin_articles_get_keywords, url_admin_articles_change_keywords,id,false,'show_articles');
+	EditText.Show();	
+};
+function ArticleChangeName(id) 
+{
+	var EditText = new EditBox('article_change_name','{{=T("Change name")}}', url_admin_articles_get_name, url_admin_articles_change_name,id,false,'show_articles');
+	EditText.Show();
+};
+function ArticleChangeUrl(id) 
+{
+	var EditText = new EditBox('article_change_url','{{=T("Change url")}}', url_admin_articles_get_url, url_admin_articles_change_url,id,false,'show_articles');
+	EditText.Show();
+};
+function ArticleList(page,search) 
+{	
+	ListArticles.SetPage(page);	
+	ListArticles.SetSearch(search);	
+	ListArticles.RefreshList();			
+};	
+function ArticleSearch() 
+{	
+	var search = jQuery("#input-search").val();	
+	ListArticles.SetPage(1);
+	ListArticles.SetSearch(search);
+	ListArticles.RefreshList();		
+};
+function ArticlePreview(postid) 
+{
+	var baseurl = "{{=URL(request.application,i2p.config.controller_default,'preview')}}";	
+	var url =  baseurl + "/" + postid;									
+	window.location=url;
+	return false;	
+};
+function ArticlePublish(postid,value) 
+{		
+	ListArticles.ShowWait();	 
+	jQuery.getJSON(url_admin_articles_change_status, {id: postid, value: value}, function(json){
+		MessageLog(json);	    		
+		ListArticles.CloseWait();
+		ListArticles.RefreshList();
+    });	
+};
+
+function ArticleAsPage(postid,value) 
+{	
+	ListArticles.ShowWait();	 
+	jQuery.getJSON(url_admin_articles_change_ispage, {id: postid, value: value}, function(json){
+		MessageLog(json);	    		
+		ListArticles.CloseWait();
+		ListArticles.RefreshList();
+    });	
+};
+
+function ArticleChangeCategory(postid){
+	var EditCategories = new ChangeCategory(postid);
+	EditCategories.Show();
+	EditCategories.SetWidth(400);
+	//EditCategories.SetHeight(200);
+}
+
+/* Users  */
+
+function UsersList(page,search) 
+{	
+	ListUsers.SetPage(page);
+	ListUsers.SetSearch(search);
+	ListUsers.RefreshList();	
+};
+
+function UserSearch() 
+{		
+	var search = jQuery("#input-search").val();	
+	ListUsers.SetPage(1);
+	ListUsers.SetSearch(search);
+	ListUsers.RefreshList();			
+};
+function UserFirstName(userid) 
+{
+	var EditText = new EditBox('user_first_name','{{=T("Change first name")}}', url_admin_user_get_firstname, url_admin_user_save_firstname,userid,false,'show_users');
+	EditText.Show();		
+};
+function UserLastName(userid) 
+{
+	var EditText = new EditBox('user_last_name','{{=T("Change last name")}}', url_admin_user_get_lastname, url_admin_user_save_lastname,userid,false,'show_users');
+	EditText.Show();		
+};
+function UserEmail(userid) 
+{
+	var EditText = new EditBox('user_email','{{=T("Change email")}}', url_admin_user_get_email, url_admin_user_save_email,userid,false,'show_users');
+	EditText.Show();			
+};
+function UserDelete(userid) 
+{
+	if(!confirm("{{=T('Sure you want to delete this user?')}}")){ return}		
+	ListUsers.ShowWait();	 
+	jQuery.getJSON(url_admin_user_delete, {id: userid}, function(json){
+		MessageLog(json);	    		
+		ListUsers.CloseWait();
+		ListUsers.RefreshList();	
+    });	
+};
+
+function UserActivate(userid) 
+{	
+	ListUsers.ShowWait();	 
+	jQuery.getJSON(url_admin_user_activate, {id: userid}, function(json){
+		MessageLog(json);	    		
+		ListUsers.CloseWait();
+		ListUsers.RefreshList();
+    });		
+};
+
+function UserDisable(userid) 
+{		
+	ListUsers.ShowWait();	 
+	jQuery.getJSON(url_admin_user_disable, {id: userid}, function(json){
+		MessageLog(json);    		
+		ListUsers.CloseWait();
+		ListUsers.RefreshList();
+    });		
+};
+
+function UserBlock(userid) 
+{		
+	ListUsers.ShowWait();	 
+	jQuery.getJSON(url_admin_user_block, {id: userid}, function(json){
+		MessageLog(json);    		
+		ListUsers.CloseWait();
+		ListUsers.RefreshList();
+    });		
+};
+
+function UserPassword(userid) 
+{
+	//The password is random generated
+	var EditText = new EditBox('user_change_password','{{=T("Change password")}}', url_admin_user_get_pass, url_admin_user_change_pass,userid,false,'show_users');
+	EditText.Show();		
+};
+
+function UserSetAdmin(userid) 
+{	
+	ListUsers.ShowWait();	 
+	jQuery.getJSON(url_admin_user_set_admin, {id: userid}, function(json){
+		MessageLog(json);	    		
+		ListUsers.CloseWait();
+		ListUsers.RefreshList();
+    });				
+};			
+
+/* Comments */
+function CommentList(page) 
+{
+	ListComments.SetPage(page);	
+	ListComments.RefreshList();			
+};
+function CommentDelete(commentid) 
+{
+	if(!confirm("{{=T('Sure you want to delete this comment?')}}")){ return}	
+	ListComments.ShowWait();	 
+	jQuery.getJSON(url_admin_comment_delete, {id: commentid}, function(json){
+		MessageLog(json);	    		
+		ListComments.CloseWait();
+		ListComments.RefreshList();
+    });		
+};
+
+function CommentEdit(commentid) 
+{
+	var EditText = new EditBox('comment_edit','{{=T("Comment edit")}}', url_admin_comment_get, url_admin_comment_change,commentid);
+	EditText.Show();		
+};
+	
+/* Categories */
+function CategoryList(page) 
+{
+	ListCategories.SetPage(page);	
+	ListCategories.RefreshList();			
+};
+
+function CategoryAdd() 
+{	
+	ListCategories.ShowWait(); 
+	jQuery.getJSON(url_admin_categories_add, {}, function(json){
+		MessageLog(json);    		
+		ListCategories.CloseWait();
+		ListCategories.RefreshList();
+    });
+};
+
+function CategoryChangeTitle(catid) 
+{
+	var EditText = new EditBox('category_change_tittle','{{=T("Change title")}}', url_admin_categories_get_title, url_admin_categories_change_title,catid,false,'show_categories');
+	EditText.Show();			
+};
+
+function CategoryChangeName(catid) 
+{
+	var EditText = new EditBox('category_change_name','{{=T("Change name")}}', url_admin_categories_get_name, url_admin_categories_change_name,catid,false,'show_categories');
+	EditText.Show();			
+};
+
+function CategoryChangeDescription(catid) 
+{
+	var EditText = new EditBox('category_change_description','{{=T("Change description")}}', url_admin_categories_get_description, url_admin_categories_change_description,catid,false,'show_categories');
+	EditText.Show();			
+};
+
+function CategoryDelete(catid) 
+{
+	if(!confirm("{{=T('Are you sure you want to delete this category?')}}")){ return}	
+	ListCategories.ShowWait();	 
+	jQuery.getJSON(url_admin_categories_delete, {id: catid}, function(json){
+		MessageLog(json);	    		
+		ListCategories.CloseWait();
+		ListCategories.RefreshList();
+    });		
+};
+
+/* Images */
+function UploadImage(){
+	
+	var MyUploadForm = new FormUploadImage();
+	MyUploadForm.Show();	
+}
+
+function ImageList(page) 
+{
+	ListImages.SetPage(page);	
+	ListImages.RefreshList();	
+};
+
+function ImageShowUrl(id, url){	
+	var MyShowUrl = new PanelShowUrlImage(id,url);
+	MyShowUrl.Show();
+}
+
+function ImageDelete(imageid) 
+{
+	if(!confirm("{{=T('Sure you want to delete this image?')}}")){ return}		
+	ListImages.ShowWait();	 
+	jQuery.getJSON(url_admin_image_delete, {id: imageid}, function(json){
+		MessageLog(json);	    		
+		ListImages.CloseWait();
+		ListImages.RefreshList();
+    });		
+};
+
+function ImageChangeComment(imageid){	
+	var EditText = new EditBox('image_change_comment','{{=T("Change description")}}', url_admin_image_get_comment, url_admin_image_change_comment,imageid,false,'show_images');
+	EditText.Show();	
+}
+
+/* Links */
+function LinkAdd() 
+{	
+	ListLinks.ShowWait();	 
+	jQuery.getJSON(url_admin_links_add, {}, function(json){
+		MessageLog(json);	    		
+		ListLinks.CloseWait();
+		ListLinks.RefreshList();
+    });
+};
+
+function LinkChangeTitle(linkid) 
+{
+	var EditText = new EditBox('link_change_tittle','{{=T("Change title")}}', url_admin_links_get_title, url_admin_links_change_title,linkid,false,'show_links');
+	EditText.Show();			
+};
+
+function LinkChangeUrl(linkid) 
+{
+	var EditText = new EditBox('link_change_url','{{=T("Change url")}}', url_admin_links_get_url, url_admin_links_change_url,linkid,false,'show_links');
+	EditText.Show();			
+};
+
+function LinkChangeDescription (linkid) 
+{
+	var EditText = new EditBox('link_change_description','{{=T("Change description")}}', url_admin_links_get_description, url_admin_links_change_description,linkid,false,'show_links');
+	EditText.Show();		
+};
+
+function LinkDelete(linkid) 
+{
+	if(!confirm("{{=T('Sure you want to delete this link?')}}")){ return}		
+	ListLinks.ShowWait();	 
+	jQuery.getJSON(url_admin_links_delete, {id: linkid}, function(json){
+		MessageLog(json);	    		
+		ListLinks.CloseWait();
+		ListLinks.RefreshList();
+    });		
+};
+
+function LinkList(page) 
+{	
+	ListLinks.SetPage(page);	
+	ListLinks.RefreshList();	
+};
+
+/* Styles */
+function StyleList(page) 
+{	
+	ListStyles.SetPage(page);	
+	ListStyles.RefreshList();	
+};	
+
+function StyleAdd() 
+{		
+	ListStyles.ShowWait(); 
+	jQuery.getJSON(url_admin_style_add, {}, function(json){
+		MessageLog(json);    		
+		ListStyles.CloseWait();
+		ListStyles.RefreshList();
+    });
+};
+
+function StyleChangeTitle(styleid) 
+{
+	var EditText = new EditBox('style_change_tittle','{{=T("Change title")}}', url_admin_style_get_title, url_admin_style_change_title,styleid,false,'show_styles');
+	EditText.Show();
+};
+
+function StyleChangeCss(styleid) 
+{
+	var EditText = new EditBox('style_change_css','{{=T("Change css")}}', url_admin_style_get_css, url_admin_style_change_css,styleid,false,'show_styles');
+	EditText.Show();
+};
+
+function StyleChangeAuthor(styleid) 
+{
+	var EditText = new EditBox('style_change_author','{{=T("Change author")}}', url_admin_style_get_author, url_admin_style_change_author,styleid,false,'show_styles');
+	EditText.Show();
+};
+
+function StyleDelete(styleid) 
+{
+	if(!confirm("{{=T('Sure you want to delete this style?')}}")){ return}			
+	ListStyles.ShowWait();	 
+	jQuery.getJSON(url_admin_style_delete, {id: styleid}, function(json){
+		MessageLog(json);	    		
+		ListStyles.CloseWait();
+		ListStyles.RefreshList();
+    });		
+};
+
+function StyleApply(styleid) 
+{		
+	ListStyles.ShowWait();	 
+	jQuery.getJSON(url_admin_style_apply, {id: styleid}, function(json){
+		MessageLog(json);	    		
+		ListStyles.CloseWait();
+		ListStyles.RefreshList();
+    });		
+};
+
+function StyleShowAvailables(styleid){
+	var ChangeStyle = new ChangeStyles(styleid);
+	ChangeStyle.Show();	
+}
+
+function StyleChangeStyle(styleid,stylenew) 
+{
+	if(!confirm("{{=T('Warning: This will replace your css with the default value from current style. Are you sure you want to continue?')}}")){ return}			
+		 
+	jQuery.getJSON(url_admin_style_change_style, {id: styleid, value: stylenew}, function(json){
+		MessageLog(json);	
+		ListStyles.RefreshList();			
+    });		
+};
+
+
+/* Events */
+function OnEventsPanelAdmin()
+{
+	
+	var color_highlight = '#fffca3';
+	
+	//ActionNavAdmin		
+	ActionNavAdmin = jQuery(".admin_nav .navadmin");
+	ActionNavAdmin.click(function(event){		
+		ShowCloseAdmin();								
+	}).hover(function () {
+		ActionNavAdmin.css({cursor: 'pointer' }); 	
+		ActionNavAdmin.css({'background-color': color_highlight}); 								      	
+  	},
+  	function () {
+    	ActionNavAdmin.css({cursor: 'default'});
+		ActionNavAdmin.css({'background-color': '#fff'}); 								 
+					
+  	});		
+	
+	//ActionNavInfo		
+	ActionNavInfo = jQuery(".admin_nav .navinfo");
+	ActionNavInfo.click(function(event){Information.Show();	}).hover(function () {
+		ActionNavInfo.css({cursor: 'pointer'});  
+		ActionNavInfo.css({'background-color': color_highlight});		      	
+  	},
+  	function () {
+    	ActionNavInfo.css({cursor: 'default'});
+		ActionNavInfo.css({'background-color': '#fff'});
+		
+  	});
+			
+	//ActionNavArticles		
+	ActionNavArticles = jQuery(".admin_nav .navarticles");
+	ActionNavArticles.click(function(event){ListArticles.Show();}).hover(function () {
+			ActionNavArticles.css({cursor: 'pointer'});  
+			ActionNavArticles.css({'background-color': color_highlight});		      	
+	  	},
+	  	function () {
+	    	ActionNavArticles.css({cursor: 'default'});
+			ActionNavArticles.css({'background-color': '#fff'});		
+  	});
+	
+	//ActionNavUsers		
+	ActionNavUsers = jQuery(".admin_nav .navusers");
+	ActionNavUsers.click(function(event){ListUsers.Show();	}).hover(function () {
+			ActionNavUsers.css({cursor: 'pointer'});  
+			ActionNavUsers.css({'background-color': color_highlight});
+			      	
+	  	},
+	  	function () {
+	    	ActionNavUsers.css({cursor: 'default'});
+			ActionNavUsers.css({'background-color': '#fff'});
+		
+  	});
+				
+	ActionNavComments = jQuery(".admin_nav .navcomments");
+	ActionNavComments.click(function(event){ListComments.Show();}).hover(function () {
+			ActionNavComments.css({cursor: 'pointer'});
+			ActionNavComments.css({'background-color': color_highlight});	       	
+	  	},
+	  	function () {
+	    	ActionNavComments.css({cursor: 'default'});
+			ActionNavComments.css({'background-color': '#fff'});		
+  	});
+				
+	ActionNavImages = jQuery(".admin_nav .navimages");
+	ActionNavImages.click(function(event){ListImages.Show(); ListImages.SetWidth(535);}).hover(function () {
+		ActionNavImages.css({cursor: 'pointer' }); 
+		ActionNavImages.css({'background-color': color_highlight});	       	
+  	},
+  	function () {
+    	ActionNavImages.css({cursor: 'default'});
+		ActionNavImages.css({'background-color': '#fff'});		
+  	});	
+				
+	ActionNavCategories = jQuery(".admin_nav .navcategories");
+	ActionNavCategories.click(function(event){ListCategories.Show();}).hover(function () {
+		ActionNavCategories.css({cursor: 'pointer' }); 
+		ActionNavCategories.css({'background-color': color_highlight});	       	
+  	},
+  	function () {
+    	ActionNavCategories.css({cursor: 'default'});
+		ActionNavCategories.css({'background-color': '#fff'});		
+  	});
+					
+	ActionNavLinks = jQuery(".admin_nav .navlinks");
+	ActionNavLinks.click(function(event){ListLinks.Show();}).hover(function () {
+		ActionNavLinks.css({cursor: 'pointer' }); 
+		ActionNavLinks.css({'background-color': color_highlight});	       	
+  	},
+  	function () {
+    	ActionNavLinks.css({cursor: 'default'});
+		ActionNavLinks.css({'background-color': '#fff'});		
+  	});
+				
+	ActionNavStyle = jQuery(".admin_nav .navstyle");
+	ActionNavStyle.click(function(event){ListStyles.Show();	}).hover(function () {
+		ActionNavStyle.css({cursor: 'pointer' }); 
+		ActionNavStyle.css({'background-color': color_highlight});	       	
+  	},
+  	function () {
+    	ActionNavStyle.css({cursor: 'default'});
+		ActionNavStyle.css({'background-color': '#fff'});		
+  	});				
+	
+};	
+
+function WaitAjaxLoading(name_parent,top,left) 
+{
+	var filename = url_images + '/ajax-loader.gif';
+	var name_loader = name_parent + '-loader'
+	//parent = jQuery('#' + name_parent);
+	//parent.append('<img src="' + filename + '" id="' + name_loader +'" alt="Loading..." />');
+	$('#' + name_parent).append('<img src="' + filename + '" id="' + name_loader +'" alt="Loading..." />');
+	ImgAjaxLoader = jQuery("#" + name_loader);
+	ImgAjaxLoader.css({
+        'top' : top,
+        'left' : left,			
+		'position' : 'absolute',	
+		'margin-top' : -25,
+        'margin-left' : -25,		
+		'z-index': 99999
+    });		
+			
+};
+
+function CloseAjaxLoading(name_parent) 
+{
+	var name_loader = name_parent + '-loader'
+	jQuery('#' + name_loader).remove(); 
+};
+
+function MessageLog(json) 
+{
+	message = json["message"];
+	alertwarn = json["alert"];
+	ShowFlash(message,alertwarn);
+};
+	
+jQuery(document).ready(function(){ OnEventsPanelAdmin(); }); 
+
+//--></script>

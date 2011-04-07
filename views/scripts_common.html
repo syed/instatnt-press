@@ -1,0 +1,348 @@
+<script type="text/javascript" charset="utf-8"><!--
+var url_images = "{{=URL(request.application,'static','images')}}";
+var url_get_comments = "{{=URL(request.application,i2p.config.controller_default,'json_get_comments_from_post')}}";
+var url_get_comments_title = "{{=URL(request.application,i2p.config.controller_default,'json_get_comments_title')}}";
+var url_get_comments_form = "{{=URL(request.application,i2p.config.controller_default,'json_get_comments_form')}}";
+var url_user_is_log_in = "{{=URL(request.application,i2p.config.controller_default,'json_check_user_is_log_in')}}";
+
+var url_new_comment = "{{=URL(request.application,i2p.config.controller_default,'json_new_comment')}}";
+var url_get_comments_count = "{{=URL(request.application,i2p.config.controller_default,'json_get_comments_count')}}";
+
+var url_get_sidebar_categories = "{{=URL(request.application,i2p.config.controller_default,'json_get_sidebar_categories')}}";
+var url_get_sidebar_last_posts = "{{=URL(request.application,i2p.config.controller_default,'json_get_sidebar_last_posts')}}";
+var url_get_sidebar_tags = "{{=URL(request.application,i2p.config.controller_default,'json_get_sidebar_tags')}}";
+var url_get_sidebar_pages = "{{=URL(request.application,i2p.config.controller_default,'json_get_sidebar_pages')}}";
+var url_get_sidebar_archive = "{{=URL(request.application,i2p.config.controller_default,'json_get_sidebar_archive')}}";
+var url_get_sidebar_links = "{{=URL(request.application,i2p.config.controller_default,'json_get_sidebar_links')}}";
+var url_get_sidebar_last_comments = "{{=URL(request.application,i2p.config.controller_default,'json_get_sidebar_last_comments')}}";
+
+function Exists(element) {	
+if (element.length == 0) {
+	return false;
+}
+else {
+	return true;
+}				
+};
+function Load_Widgets_Sidebar_Categories() 
+{	
+	var widgets = '#sidebar-categories'; 
+	jQuery.getJSON(url_get_sidebar_categories, {}, function(json){
+    	html = json["html"];					
+		jQuery(widgets).html(html);		
+		jQuery(widgets).css({display: 'block'});		
+    });
+};
+function Load_Widgets_Sidebar_Last_Posts() 
+{	
+	var widgets = '#sidebar-last-posts'; 
+	jQuery.getJSON(url_get_sidebar_last_posts, {}, function(json){
+    	html = json["html"];					
+		jQuery(widgets).html(html);				
+		jQuery(widgets).css({display: 'block'});
+    });
+};
+function Load_Widgets_Sidebar_Tags() 
+{	
+	var widgets = '#sidebar-tags'; 
+	jQuery.getJSON(url_get_sidebar_tags, {}, function(json){
+    	html = json["html"];					
+		jQuery(widgets).html(html);		
+		jQuery(widgets).css({display: 'block'});		
+    });
+};
+function Load_Widgets_Sidebar_Pages() 
+{	
+	var widgets = '#sidebar-pages'; 
+	jQuery.getJSON(url_get_sidebar_pages, {}, function(json){
+    	html = json["html"];					
+		jQuery(widgets).html(html);			
+		jQuery(widgets).css({display: 'block'});	
+    });
+};
+function Load_Widgets_Sidebar_Archive() 
+{	
+	var widgets = '#sidebar-archive'; 
+	jQuery.getJSON(url_get_sidebar_archive, {}, function(json){
+    	html = json["html"];					
+		jQuery(widgets).html(html);		
+		jQuery(widgets).css({display: 'block'});		
+    });
+};
+function Load_Widgets_Sidebar_Links() 
+{	
+	var widgets = '#sidebar-links'; 
+	jQuery.getJSON(url_get_sidebar_links, {}, function(json){
+    	html = json["html"];					
+		jQuery(widgets).html(html);		
+		jQuery(widgets).css({display: 'block'});		
+    });
+};
+function Load_Widgets_Sidebar_Last_Comments() 
+{	
+	var widgets = '#sidebar-last-comments'; 
+	jQuery.getJSON(url_get_sidebar_last_comments, {}, function(json){
+    	html = json["html"];					
+		jQuery(widgets).html(html);		
+		jQuery(widgets).css({display: 'block'});		
+    });
+};
+function Load_Widgets_Footer_Last_Posts() 
+{	
+	var widgets = '#footer-widgets-last-posts'; 
+	jQuery.getJSON(url_get_sidebar_last_posts, {}, function(json){
+    	html = json["html"];					
+		jQuery(widgets).html(html);		
+		jQuery(widgets).css({display: 'block'});		
+    });
+};
+function Load_Widgets_Footer_Pages() 
+{	
+	var widgets = '#footer-widgets-pages'; 
+	jQuery.getJSON(url_get_sidebar_pages, {}, function(json){
+    	html = json["html"];					
+		jQuery(widgets).html(html);		
+		jQuery(widgets).css({display: 'block'});		
+    });
+};
+function Load_Widgets_Footer_Categories() 
+{	
+	var widgets = '#footer-widgets-categories'; 
+	jQuery.getJSON(url_get_sidebar_categories, {}, function(json){
+    	html = json["html"];					
+		jQuery(widgets).html(html);				
+		jQuery(widgets).css({display: 'block'});
+    });
+};
+function Load_Widgets_Footer_Archive() 
+{	
+	var widgets = '#footer-widgets-archives'; 
+	jQuery.getJSON(url_get_sidebar_archive, {}, function(json){
+    	html = json["html"];					
+		jQuery(widgets).html(html);		
+		jQuery(widgets).css({display: 'block'});		
+    });
+};
+
+function Load_Widgets() 
+{	
+	Load_Widgets_Sidebar_Categories();
+	Load_Widgets_Sidebar_Last_Posts();
+	Load_Widgets_Sidebar_Tags();
+	Load_Widgets_Sidebar_Pages();	
+	Load_Widgets_Sidebar_Archive();
+	Load_Widgets_Sidebar_Links();
+	
+	{{if i2p.config.comments_method in ['Enabled']:}}
+	Load_Widgets_Sidebar_Last_Comments();
+	{{pass}}	
+	
+	Load_Widgets_Footer_Last_Posts();
+	Load_Widgets_Footer_Pages();
+	Load_Widgets_Footer_Categories();
+	Load_Widgets_Footer_Archive();
+		
+	{{if i2p.config.comments_method in ['Enabled']:}}
+	Load_Comments_Count();
+	{{pass}}
+	
+};
+
+function Load_Comments_Count() 
+{	
+	var name_class = "comments-count";
+	var name_object = "comments-count";	
+	$('.' + name_class).each(function() {		
+		idobj = $(this).attr('id');				
+		var array_idobj = idobj.split("_");		
+		var idcomment = array_idobj[1]; 		
+		if (idcomment > 0) {
+			jQuery.getJSON(url_get_comments_count, {id: idcomment}, function(json){
+		    	count = json["count"];
+				var html_value = count;
+				jQuery("#" + name_object +"_" + idcomment).html(html_value);						
+		    });			
+		}
+    
+	});			
+};
+
+function LoadComments (id,page) 
+{	
+	var id_panel = '#comments .list-reply';
+	if (page === undefined) { var page = 1; }	
+	if (typeof(url_get_comments_admin) === 'undefined') {	var url_to_comments = url_get_comments;} else {	var url_to_comments = url_get_comments_admin;}	
+	LoadingComments(); 
+	jQuery.getJSON(url_to_comments, {id: id, page: page}, function(json){
+    	html = json["html"];
+		CloseLoadingComments();			
+		jQuery(id_panel).html(html);
+		jQuery(id_panel).slideDown('slow');		
+    });
+};
+
+function LoadCommentsTitle (id) 
+{	
+	var id_panel = '#comments .title-reply';	 
+	jQuery.getJSON(url_get_comments_title, {id: id}, function(json){
+    	html = json["html"];					
+		jQuery(id_panel).html(html);				
+    });
+};
+
+function LoadCommentsForm (id) 
+{	
+	var id_panel = '#comments .form-reply';	 
+	jQuery.getJSON(url_get_comments_form, {id: id}, function(json){
+    	html = json["html"];					
+		jQuery(id_panel).html(html);				
+    });
+};
+
+
+function LoadingComments() 
+{
+	var id_parent = '#comments .list-reply';	
+	jQuery(id_parent).html("");
+	var top = '50%';
+	var left = '50%';
+	var filename = url_images + '/ajax-loader.gif';
+	var name_loading = 'comments-loading';
+	//parent = $(id_parent);
+	$(id_parent).append('<div id="fade"></div>');
+	/*JQuery('<div id="fade"></div>').appendTo(id_parent);*/
+	MyFade = jQuery('#fade');
+	MyFade.css({
+		'display': 'block',
+		'background': '#fff',
+        'top' : 0,
+        'left' : 0,		
+		'height': '300px',			
+		'opacity' : '.90',       		
+		'z-index': 9999
+    });
+	MyFade.css({'filter' : 'alpha(opacity=60)'}).fadeIn();
+	MyFade.append('<img src="' + filename + '" id="' + name_loading +'" alt="Loading..." />');
+	/*JQuery('<img src="' + filename + '" id="' + name_loading +'" alt="Loading..." />').appendTo('#fade')*/
+	
+	Loading = jQuery("#" + name_loading);
+	Loading.css({
+		'display': 'block',
+		'margin-left': 'auto',
+  		'margin-right': 'auto',	
+		'padding-top': '120px',		
+		'z-index': 99999
+    });
+				
+};
+
+function CloseLoadingComments() 
+{
+	//var id_parent = '#comments .list-reply';
+	var name_loading = 'comments-loading';
+	jQuery('#fade').remove(); //Remuevo el fade
+	jQuery('#' + name_loading).remove(); 
+};
+
+function CloseAllReplyBox() 
+{				
+	jQuery("#replyform").remove();	
+};
+
+function RealShowReplyBox(idpost,idreply) 
+{
+	var class_panel = 'replyform';	
+	var name_panel = 'replyform';
+	var id_name_textarea = name_panel + "-textarea";
+	var id_name_form = name_panel + "-form";
+	var id_name_submit = name_panel + "-submit";
+	var id_name_discard = name_panel + "-discard";
+	
+	dict_reply =  {'name': name_panel,'id_post':idpost, 'id_reply':idreply, 'textarea': id_name_textarea, 'form': id_name_form, 'submit': id_name_submit};
+	
+	if (idreply == 0) {var parentobject = '#comment-0';} else {var parentobject = '#comment-' + idreply;}					
+	ReplyBox = jQuery("#" + name_panel);
+		
+	if (!Exists(ReplyBox)) {	
+				
+		var replyform = '<h2>{{=T("Leave a Reply")}}</h2><form method="post" action="#" id="' + id_name_form +'"><div class="text"><textarea id="' + id_name_textarea +'" value="" /></div><div class="buttons"><input type="submit" id="' + id_name_submit +'" value="Send" /><input type="submit" id="' + id_name_discard +'" value="Discard" /></div></form>';		
+		jQuery('<div id="'+ name_panel +'" class="' + class_panel + '">' + replyform + '</div>').insertAfter(parentobject);
+		ReplyBox = jQuery("#" + name_panel);
+		OnSubmitReply(dict_reply);							
+	}
+								
+	if (ReplyBox.is(":hidden")) {			
+		ReplyBox.fadeIn("slow");						
+	} else {			
+		CloseReplyBox(name_panel);
+	}	 
+	
+};
+
+
+function ShowReplyBox(idpost,idreply) {	
+
+	CloseAllReplyBox(); //first close all reply box
+	
+	jQuery.getJSON(url_user_is_log_in, {}, function(json){
+    	is_log_in = json["value"];					
+		if (is_log_in) {
+			RealShowReplyBox(idpost,idreply);		
+		} else {
+			message = "{{=T('You have to sign in to your account before comment')}}";
+			ShowFlash(message,2);			
+		}
+								
+    });
+					
+};
+
+function OnSubmitReply(dict_reply) 
+{		
+	idpost = dict_reply.id_post;
+	idreply = dict_reply.id_reply;		
+	name_form = dict_reply.form;
+	name_textarea = dict_reply.textarea;
+	name_panel = dict_reply.name;	
+	FormReply = jQuery("#" + name_form);	
+	FormReply.bind('submit', function() {				
+		content_value = jQuery("#" + name_textarea).val();	
+		jQuery.post(url_new_comment, {idreply: idreply,idpost: idpost, value: content_value  }, function(data, textStatus) {
+		 	message = data["message"];
+			alertwarn= data["alert"];
+			ShowFlash(message,alertwarn);
+			LoadComments(idpost,1);		  
+		}, "json");
+			
+		return false;			
+	});
+
+};
+
+function CloseReplyBox (name_panel) 
+{				
+	ReplyBox = jQuery("#" + name_panel);
+	if (Exists(ReplyBox)) {
+		ReplyBox.remove();
+	}
+};
+
+function ShowFlash(message,alertcode) 
+{
+	//alertcode: 0 no errors, 1 warning, 2 error
+	var url_images = "{{=URL(request.application,'static','images/noti_ok.png')}}";	
+	if (typeof(message) === 'undefined') {var message = "{{=T('No message receive from server')}}";}
+	if (typeof(alertcode) === 'undefined') {var alertcode = 0;	} //if not defined make warning default
+	if (alertcode == 0) {	var iconurl = "{{=URL(request.application,'static','images/noti_ok.png')}}";}
+	else if (alertcode == 1) {var iconurl = "{{=URL(request.application,'static','images/noti_warn.png')}}";}
+	else {var iconurl = "{{=URL(request.application,'static','images/noti_error.png')}}";}		
+	var icon = '<img src="' + iconurl + '" alt="notification icon" style="float: left; padding-right: 14px;" />'
+	//jQuery('.flash').html(icon + message);
+	//jQuery('.flash').slideDown('fast'); 
+	//setTimeout(function() {jQuery('.flash').slideUp('fast');}, 15000);
+	jQuery.jGrowl(icon + message, { header: 'Notification', theme: 'i2p', life: 10000 });
+};
+
+
+		 
+//--></script>

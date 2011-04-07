@@ -1,0 +1,27 @@
+{{#Minimal modification to css in this view,
+  #the intention of this file is that you can
+  #manipulate sidebars, depending of the view. For
+  #example you can get 3 columns in index and 2 in others views.
+  #this get the css proper to the view, but this not replace main css, so be carefull 
+  #
+  # Use this url: http://www.neuroticweb.com/recursos/2-columns-layout/
+  # or: http://www.neuroticweb.com/recursos/3-columns-layout/index.php
+  # to calculate the size of the columns the total width size is 980px}}
+
+<style type="text/css" charset="utf-8">
+#content {	
+	float: right; 
+	width: 480px; /*730px if you want two columns (one sidebar)*/
+	display:block;	
+}
+#sidebar {
+	float: left;
+	display:block;
+	width: 210px;
+	}
+#sidebar-extra {
+	float: left;
+	display:block;
+	width: 210px;
+	}	
+</style>

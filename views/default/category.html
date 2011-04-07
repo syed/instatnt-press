@@ -1,0 +1,57 @@
+{{extend 'layout.html'}}
+
+<!-- content -->
+<div id="content">															
+			
+	<div id="results-info">{{=T('Articles with category')}} <strong>'{{=category}}'</strong> - Page {{=page}} - {{=T('Showing')}} <strong>{{=count_posts}}</strong> {{=T('results')}}</div>
+	
+	{{ if count_posts>0: }}
+	
+		{{=XML(xml_posts)}}
+	
+		{{=XML(xml_pages)}}
+	
+	{{else:}}
+	
+		<div class="post">
+		   <h2>{{=T('The search for')}} <strong>'{{=category}}'</strong> {{=T('not yield any results')}}</h2>
+		   
+		   <p>
+		   <ul>
+		   		<li>{{=T('Make sure all words are spelled correctly')}}</li>		
+				<li>{{=T('Use more general keywords')}}</li>
+		   </ul>
+		   </p>
+		   
+		</div>
+	
+	{{pass}}
+	
+<div style="clear: both;"></div>
+</div>
+<!-- end #content -->
+
+<!-- disqus count -->
+{{if i2p.config.comments_method in ['Disqus']:}}
+	{{=XML(i2p.widgets.disqus_comments_count())}}
+{{pass}}
+<!-- end disqus count -->
+
+
+<!-- header -->
+{{block header}}						
+{{include i2p.siteinfo.get_layout_header()}}	
+{{end}}	
+<!-- end #header -->
+
+<!-- sidebars -->
+{{block sidebar}}
+{{include i2p.siteinfo.get_layout_sidebar()}}
+{{end}}	
+<!-- end sidebars -->
+
+<!-- footer -->
+{{block footer}}
+{{include i2p.siteinfo.get_layout_footer()}}	
+{{end}}
+<!-- end #footer -->

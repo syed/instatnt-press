@@ -1,0 +1,239 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui
+END
+fontname.js
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/fontname.js
+END
+justifyleft.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/justifyleft.js
+END
+blockquote.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/blockquote.js
+END
+anchor.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/anchor.js
+END
+copy.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/copy.js
+END
+stopfloat.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/stopfloat.js
+END
+direction.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/direction.js
+END
+pastetext.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/pastetext.js
+END
+pagebreak.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/pagebreak.js
+END
+outdent.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/outdent.js
+END
+div.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/div.js
+END
+docstructure.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/docstructure.js
+END
+css.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/css.js
+END
+tbcellprops.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/tbcellprops.js
+END
+pasteformattext.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/pasteformattext.js
+END
+tbrowrm.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/tbrowrm.js
+END
+unlink.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/unlink.js
+END
+fontsize.js
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/fontsize.js
+END
+smiley.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/smiley.js
+END
+fullscreen.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/fullscreen.js
+END
+undo.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/undo.js
+END
+tbcellsmerge.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/tbcellsmerge.js
+END
+about.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/about.js
+END
+tbrowbefore.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/tbrowbefore.js
+END
+indent.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/indent.js
+END
+horizontalrule.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/horizontalrule.js
+END
+tbcellsplit.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/tbcellsplit.js
+END
+image.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/image.js
+END
+tablerm.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/tablerm.js
+END
+table.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/table.js
+END
+elfinder.js
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/elfinder.js
+END
+forecolor.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/forecolor.js
+END
+link.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/link.js
+END
+flash.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/flash.js
+END
+save.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/save.js
+END
+nbsp.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/nbsp.js
+END
+tbcollbefore.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/tbcollbefore.js
+END
+tbcolrm.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/tbcolrm.js
+END
+formatblock.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/167/trunk/static/js/elrte/src/elrte/js/ui/formatblock.js
+END

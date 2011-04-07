@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/163/trunk/static/js/syntaxhighlighter/tests/js
+END
+qunit.css
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/163/trunk/static/js/syntaxhighlighter/tests/js/qunit.css
+END
+jquery-1.4.2.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/163/trunk/static/js/syntaxhighlighter/tests/js/jquery-1.4.2.js
+END
+qunit.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/163/trunk/static/js/syntaxhighlighter/tests/js/qunit.js
+END

@@ -1,0 +1,21 @@
+div.jGrowl div.i2p {
+	font:13px sans-serif; *font-size:small; *font:x-small; line-height:1.22;
+	background-color: #000;		
+	opacity: .85;
+    -ms-filter:	"progid:DXImageTransform.Microsoft.Alpha(Opacity=85)"; 
+    filter:	progid:DXImageTransform.Microsoft.Alpha(Opacity=85); 
+	zoom: 1;	
+	width: 235px;	
+	padding: 5px;
+	overflow: hidden;
+	border-color: #5ab500;
+	color:  #ffe;
+}
+
+div.jGrowl div.i2p div.message {
+	padding: 5px 5px 20px 5px;		
+}
+
+div.jGrowl div.i2p div.header {	
+	padding: 5px;	
+}
