@@ -379,7 +379,7 @@ class Widgets(object):
         categories=""
         cats = self.i2p.categories.get_list(page=1, limit=30)       
         for cat in cats:
-            post_count = db(db.posts.categories.contains(str(cat.id))).count() #contains bug in web2py              
+            post_count = db((db.posts.categories.contains(str(cat.id))) & (db.posts.published >  0)).count() #contains bug in web2py              
             text_cat = " %s (%s)" % (cat.title,post_count)
             link_cat = A(text_cat,_title="%s"%cat.description,\
                          _href=URL(request.application,\
