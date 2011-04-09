@@ -387,7 +387,7 @@ class Widgets(object):
                                    'category/by_id', args=[unicode(cat.id)] ))                     
             xml_cat = '<li>%s</li>' % link_cat.xml()            
             xml_cats += xml_cat        
-        if xml_cats!="":            
+        if xml_cats!="" and post_count>0 and cat.title != 'ChangeMe' :            
             categories = "<h2>%s</h2>"%T('Categories')
             categories += "<ul>%s</ul>"%xml_cats                
             
