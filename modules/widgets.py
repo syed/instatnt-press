@@ -379,7 +379,12 @@ class Widgets(object):
         categories=""
         cats = self.i2p.categories.get_list(page=1, limit=30)       
         for cat in cats:
-            post_count = db((db.posts.categories.contains(str(cat.id))) & (db.posts.published >  0)).count() #contains bug in web2py              
+            posts  = db(db.posts.categories.contains(str(cat.id))) #contains bug in web2py              
+			post_count = 0 
+			for post in posts :
+				if post.published : 
+					post_count+=1
+
             text_cat = " %s (%s)" % (cat.title,post_count)
             link_cat = A(text_cat,_title="%s"%cat.description,\
                          _href=URL(request.application,\
@@ -387,6 +392,7 @@ class Widgets(object):
                                    'category/by_id', args=[unicode(cat.id)] ))                     
             xml_cat = '<li>%s</li>' % link_cat.xml()            
             xml_cats += xml_cat        
+
         if xml_cats!="" and post_count>0 and cat.title != 'ChangeMe' :            
             categories = "<h2>%s</h2>"%T('Categories')
             categories += "<ul>%s</ul>"%xml_cats                
