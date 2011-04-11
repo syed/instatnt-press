@@ -379,12 +379,12 @@ class Widgets(object):
         categories=""
         cats = self.i2p.categories.get_list(page=1, limit=30)       
         for cat in cats:
-            posts  = db(db.posts.categories.contains(str(cat.id))) #contains bug in web2py              
-			post_count = 0 
-			for post in posts :
-				if post.published : 
-					post_count+=1
-
+            post_count  = db((db.posts.categories.contains(str(cat.id))) & (db.posts.published) ).count() #contains bug in web2py              
+            #post_count = 0 
+            #for post in posts :
+            #    if post.published : 
+            #        post_count+=1
+          
             text_cat = " %s (%s)" % (cat.title,post_count)
             link_cat = A(text_cat,_title="%s"%cat.description,\
                          _href=URL(request.application,\
@@ -397,8 +397,8 @@ class Widgets(object):
             categories = "<h2>%s</h2>"%T('Categories')
             categories += "<ul>%s</ul>"%xml_cats                
             
-        return categories  
-    
+        return categories
+        
     
 
     def sidebar_categories(self):
